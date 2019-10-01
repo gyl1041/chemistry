@@ -694,7 +694,7 @@ var Zepto = (function() {
     hasClass: function(name){
       if (!name) return false
       return emptyArray.some.call(this, function(el){
-        return this.test(className(el))
+        return this.login(className(el))
       }, classRE(name))
     },
     addClass: function(name){

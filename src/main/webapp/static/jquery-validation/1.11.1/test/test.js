@@ -1268,7 +1268,7 @@ test("validate input with no type attribute, defaulting to text", function() {
 	errors(0);
 	e.valid();
 	errors(1);
-	e.val('test');
+	e.val('login.png');
 	e.trigger('keyup');
 	errors(0);
 });

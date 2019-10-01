@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="org.apache.shiro.web.filter.authc.FormAuthenticationFilter" %>
 <%@ include file="/WEB-INF/views/include/taglib.jsp" %>
 <html>
 <head>
@@ -98,7 +97,7 @@
         }
 
         body {
-            background-image: url("/static/images/image.jpg");
+            background-image: url("/static/images/login.jpg");
             background-size: 100%;
             height: 700px;
             margin:0;
@@ -128,7 +127,7 @@
         }
     </script>
 </head>
-<body >
+<body>
 <!--[if lte IE 6]><br/>
 <div class='alert alert-block' style="text-align:left;padding-bottom:10px;"><a class="close" data-dismiss="alert">x</a>
     <h4>温馨提示：</h4>
