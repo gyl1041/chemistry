@@ -241,19 +241,19 @@
 			<version>1.2</version>
 			<type>jar</type>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- <dependency>
+<!--		<dependency>-->
+<!--			<groupId>javax.servlet</groupId>-->
+<!--			<artifactId>servlet-api</artifactId>-->
+<!--			<version>2.5</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>javax.servlet.jsp</groupId>-->
+<!--			<artifactId>jsp-api</artifactId>-->
+<!--			<version>2.1</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
+		 <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
@@ -264,7 +264,7 @@
 			<artifactId>jsp-api</artifactId>
 			<version>2.2</version>
 			<scope>provided</scope>
-		</dependency> -->
+		</dependency>
 		<!-- WEB end -->
 
 		<!-- CACHE begin -->
@@ -852,16 +852,16 @@
 		<profile>
 			<id>init-db</id>
 			<dependencies>
-				<dependency>
-					<groupId>org.dbunit</groupId>
-					<artifactId>dbunit</artifactId>
-					<version>2.4.8</version>
-				</dependency>
-			  	<dependency>
-				    <groupId>org.apache.poi</groupId>
-				    <artifactId>poi</artifactId>
-				    <version>3.2-FINAL</version>
-				</dependency>
+<!--				<dependency>-->
+<!--					<groupId>org.dbunit</groupId>-->
+<!--					<artifactId>dbunit</artifactId>-->
+<!--					<version>2.4.8</version>-->
+<!--				</dependency>-->
+<!--			  	<dependency>-->
+<!--				    <groupId>org.apache.poi</groupId>-->
+<!--				    <artifactId>poi</artifactId>-->
+<!--				    <version>3.2-FINAL</version>-->
+<!--				</dependency>-->
 			</dependencies>
 			<build>
 				<plugins>

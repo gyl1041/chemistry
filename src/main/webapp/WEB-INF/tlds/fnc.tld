@@ -79,7 +79,7 @@
     <description>获取文章列表</description>
     <name>getArticleList</name>
     <function-class>com.xiamen.chemistry.modules.cms.utils.CmsUtils</function-class>
-    <function-signature>java.util.List getArticleList(java.lang.String, java.lang.String, int, java.lang.String)</function-signature>
+    <function-signature>java.util.List getArticleList(java.lang.String, java.lang.String,int, int, java.lang.String)</function-signature>
     <example>${fnc:getArticleList(siteId, categoryId, number, param)}</example>  
   </function>
   

@@ -97,9 +97,9 @@
         }
 
         body {
-            background-image: url("/static/images/login.jpg");
+            background-image: url("${ctxImage}/static/images/login.jpg");
             background-size: 100%;
-            height: 700px;
+            height: 500px;
             margin:0;
             padding:0;
         }

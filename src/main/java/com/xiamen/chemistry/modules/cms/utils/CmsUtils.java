@@ -147,6 +147,7 @@ public class CmsUtils {
 	 * @param siteId 站点编号
 	 * @param categoryId 分类编号
 	 * @param number 获取数目
+	 *               pageNo 页码
 	 * @param param  预留参数，例： key1:'value1', key2:'value2' ...
 	 * 			posid	推荐位（1：首页焦点图；2：栏目页文章推荐；）
 	 * 			image	文章图片（1：有图片的文章）
@@ -154,8 +155,8 @@ public class CmsUtils {
 	 * @return
 	 * ${fnc:getArticleList(category.site.id, category.id, not empty pageSize?pageSize:8, 'posid:2, orderBy: \"hits desc\"')}"
 	 */
-	public static List<Article> getArticleList(String siteId, String categoryId, int number, String param){
-		Page<Article> page = new Page<Article>(1, number, -1);
+	public static List<Article> getArticleList(String siteId, String categoryId, int pageNo ,int number, String param){
+		Page<Article> page = new Page<Article>(pageNo, number, -1);
 		Category category = new Category(categoryId, new Site(siteId));
 		category.setParentIds(categoryId);
 		Article article = new Article(category);
