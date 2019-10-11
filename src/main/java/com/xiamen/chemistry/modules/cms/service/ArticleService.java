@@ -37,10 +37,17 @@ import com.xiamen.chemistry.modules.sys.utils.UserUtils;
 public class ArticleService extends CrudService<ArticleDao, Article> {
 
 	@Autowired
-	private ArticleDataDao articleDataDao;
+	public ArticleDataDao articleDataDao;
 	@Autowired
 	private CategoryDao categoryDao;
-	
+
+	@Transactional(readOnly = false)
+	public ArticleData getArticleData(String id) {
+
+		return articleDataDao.get(id);
+	}
+
+
 	@Transactional(readOnly = false)
 	public Page<Article> findPage(Page<Article> page, Article article, boolean isDataScopeFilter) {
 		// 更新过期的权重，间隔为“6”个小时

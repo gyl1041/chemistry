@@ -15,10 +15,7 @@ import com.xiamen.chemistry.common.mapper.JsonMapper;
 import com.xiamen.chemistry.common.persistence.Page;
 import com.xiamen.chemistry.common.utils.CacheUtils;
 import com.xiamen.chemistry.common.utils.SpringContextHolder;
-import com.xiamen.chemistry.modules.cms.entity.Article;
-import com.xiamen.chemistry.modules.cms.entity.Category;
-import com.xiamen.chemistry.modules.cms.entity.Link;
-import com.xiamen.chemistry.modules.cms.entity.Site;
+import com.xiamen.chemistry.modules.cms.entity.*;
 import com.xiamen.chemistry.modules.cms.service.ArticleService;
 import com.xiamen.chemistry.modules.cms.service.CategoryService;
 import com.xiamen.chemistry.modules.cms.service.LinkService;
@@ -139,9 +136,13 @@ public class CmsUtils {
 	 * @return
 	 */
 	public static Article getArticle(String articleId){
+		articleService.articleDataDao.get("");
 		return articleService.get(articleId);
 	}
-	
+	public static ArticleData getArticleData(String articleId){
+		return articleService.getArticleData(articleId);
+	}
+
 	/**
 	 * 获取文章列表
 	 * @param siteId 站点编号

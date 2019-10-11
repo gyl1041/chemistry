@@ -178,7 +178,6 @@
             margin-left: 20px;
         }
 
-
         .home-header-menu-ar ul {
             width: 100%;
             margin: 0;
@@ -235,7 +234,6 @@
             -o-transform: skew(18deg);
             -ms-transform: skew(18deg);
         }
-
 
         .home-header-banner img {
             width: 1280px;
@@ -533,7 +531,14 @@
             <div class="container-content">
                 <div class="container-content-left">
                     <div class="container-content-left-pic">
-                        <img src="${ctxImage}/static/images/userinfobig.jpg">
+                        <c:forEach items="${fnc:getArticleList(site.id, '25eaba041f114a7db9525eab7d8e8ba5',1, 1, '')}"
+                                       var="article">
+                            <%--<li><a href="${article.url}" style="color:${article.color}"><img--%>
+                                    <%--src="${article.image}"><br><span class="text-edd-2">${fns:abbr(article.title,28)}</span></a>--%>
+                            <%--</li>--%>
+                            <img src="${article.image}">
+                        </c:forEach>
+
                     </div>
                 </div>
                 <div class="container-content-right">
@@ -552,9 +557,11 @@
                     </div>
                     <div class="container-content-right-right">
                         <div class="container-content-right-text">
-                            西虹市科技大学化学系教授，博士生导师，有机化学研究所研究员和副所长，结合应用基础研究，
-                            瞄准国际前沿方向和国家能源战略需求的核心科学问题开展工作，同时致力于解决人类发展的重大问题
-                            ，如环境、能源和人类健康等。
+                            <c:set var="article22" value="${fnc:getArticleData('e500b3a636a246dd82f498712866cd99')}"/>
+                            <%--西虹市科技大学化学系教授，博士生导师，有机化学研究所研究员和副所长，结合应用基础研究，--%>
+                            <%--瞄准国际前沿方向和国家能源战略需求的核心科学问题开展工作，同时致力于解决人类发展的重大问题--%>
+                            <%--，如环境、能源和人类健康等。--%>
+                            ${fns:abbr(fns:replaceHtml(article22.content),230)}
                         </div>
                     </div>
                 </div>
@@ -568,17 +575,19 @@
         <div class="container-first-ar">
             <div class="container-title">
                 <span class="container-title-text">研究方向</span>
-                <span class="pull-right"><a href="${ctxImage}/f/list-54896a149a5d42899d5a83ac4d5ecaba.html">更多&nbsp;></a></span>
+                <span class="pull-right"><a
+                        href="${ctxImage}/f/list-54896a149a5d42899d5a83ac4d5ecaba.html">更多&nbsp;></a></span>
             </div>
+            <c:set var="article11" value="${fnc:getArticleData('b7122ceec2cb4463bd6453e86d7d1a68')}"/>
             <div class="container-content text-edd-9">
-                金属促进或催化的碳－氢键、碳－碳键以及碳－杂原子键的选择性切断与生成的方法学与规律；
-                合成化学中有用的新反应、新方法、新试剂；金属促进或催化的碳－氢键、碳－碳键以及碳－
-                杂原子键的选择性切断；生成的方法学与规律，实现在合成化学中有用的新反应、新方法、新
-                试剂，探索新一代物质转化的途径；金属促进或催化的碳－氢键、碳－碳键以及碳－杂原子键
-                的选择性切断与生成的方法学与规律，实现在合成化学中有用的新反应、新方法、新试剂，探索
-                新一代物质转化的途径。
+                <%--金属促进或催化的碳－氢键、碳－碳键以及碳－杂原子键的选择性切断与生成的方法学与规律；--%>
+                <%--合成化学中有用的新反应、新方法、新试剂；金属促进或催化的碳－氢键、碳－碳键以及碳－--%>
+                <%--杂原子键的选择性切断；生成的方法学与规律，实现在合成化学中有用的新反应、新方法、新--%>
+                <%--试剂，探索新一代物质转化的途径；金属促进或催化的碳－氢键、碳－碳键以及碳－杂原子键--%>
+                <%--的选择性切断与生成的方法学与规律，实现在合成化学中有用的新反应、新方法、新试剂，探索--%>
+                <%--新一代物质转化的途径。--%>
+                ${fns:abbr(fns:replaceHtml(article11.content),450)}
             </div>
-
         </div>
     </div>
 
@@ -586,20 +595,29 @@
         <div class="container-first-ar">
             <div class="container-title">
                 <span class="container-title-text">课题组新闻</span>
-                <span class="pull-right"><a href="${ctxImage}/f/list-aff420c07e634a4f8f9db9cbf46739eb.html">更多&nbsp;></a></span>
+                <span class="pull-right"><a
+                        href="${ctxImage}/f/list-aff420c07e634a4f8f9db9cbf46739eb.html">更多&nbsp;></a></span>
             </div>
             <div class="container-content" style="margin-bottom:0;">
                 <div class="container-content-left" style="width:48%;margin-right:2%;border-right:1px solid #e3e3e3;">
                     <div class="container-content-news-list">
-                        <ul><c:forEach items="${fnc:getArticleList(site.id, 'aff420c07e634a4f8f9db9cbf46739eb', 1,2, '')}" var="article">
-                            <li><a href="${article.url}" style="color:${article.color}">${fns:abbr(article.title,28)}<span class="pull-right"><fmt:formatDate value="${article.updateDate}" pattern="yyyy.MM.dd"/>&nbsp;</span></a></li>
+                        <ul><c:forEach
+                                items="${fnc:getArticleList(site.id, 'aff420c07e634a4f8f9db9cbf46739eb', 1,2, '')}"
+                                var="article">
+                            <li><a href="${article.url}"
+                                   style="color:${article.color}">${fns:abbr(article.title,28)}<span class="pull-right"><fmt:formatDate
+                                    value="${article.updateDate}" pattern="yyyy.MM.dd"/>&nbsp;</span></a></li>
                         </c:forEach></ul>
                     </div>
                 </div>
                 <div class="container-content-right-another">
                     <div class="container-content-news-list">
-                        <ul><c:forEach items="${fnc:getArticleList(site.id, 'aff420c07e634a4f8f9db9cbf46739eb',2, 2, '')}" var="article">
-                            <li><a href="${article.url}" style="color:${article.color}">${fns:abbr(article.title,28)}<span class="pull-right"><fmt:formatDate value="${article.updateDate}" pattern="yyyy.MM.dd"/>&nbsp;</span></a></li>
+                        <ul><c:forEach
+                                items="${fnc:getArticleList(site.id, 'aff420c07e634a4f8f9db9cbf46739eb',2, 2, '')}"
+                                var="article">
+                            <li><a href="${article.url}"
+                                   style="color:${article.color}">${fns:abbr(article.title,28)}<span class="pull-right"><fmt:formatDate
+                                    value="${article.updateDate}" pattern="yyyy.MM.dd"/>&nbsp;</span></a></li>
                         </c:forEach></ul>
                     </div>
                 </div>
@@ -613,12 +631,16 @@
         <div class="container-first-ar" style="padding-bottom: 0;">
             <div class="container-title">
                 <span class="container-title-text">组内活动</span>
-                <span class="pull-right"><a href="${ctxImage}/f/list-a0f9bcb5640c47f996b36671524a2aab.html">更多&nbsp;></a></span>
+                <span class="pull-right"><a
+                        href="${ctxImage}/f/list-a0f9bcb5640c47f996b36671524a2aab.html">更多&nbsp;></a></span>
             </div>
             <div class="container-content">
                 <div class="team-list-ar">
-                    <ul><c:forEach items="${fnc:getArticleList(site.id, 'a0f9bcb5640c47f996b36671524a2aab',1, 4, '')}" var="article">
-                        <li><a href="${article.url}" style="color:${article.color}"><img src="${article.image}"><br><span class="text-edd-2">${fns:abbr(article.title,28)}</span></a></li>
+                    <ul><c:forEach items="${fnc:getArticleList(site.id, 'a0f9bcb5640c47f996b36671524a2aab',1, 4, '')}"
+                                   var="article">
+                        <li><a href="${article.url}" style="color:${article.color}"><img
+                                src="${article.image}"><br><span class="text-edd-2">${fns:abbr(article.title,28)}</span></a>
+                        </li>
                     </c:forEach></ul>
                 </div>
             </div>

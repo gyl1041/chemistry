@@ -74,7 +74,15 @@
     <function-signature>com.xiamen.chemistry.modules.cms.entity.Article getArticle(java.lang.String)</function-signature>
     <example>${fnc:getArticle(articleId)}</example>  
   </function>
-  
+
+  <function>
+    <description>获取文章详情</description>
+    <name>getArticleData</name>
+    <function-class>com.xiamen.chemistry.modules.cms.utils.CmsUtils</function-class>
+    <function-signature>com.xiamen.chemistry.modules.cms.entity.ArticleData getArticleData(java.lang.String)</function-signature>
+    <example>${fnc:getArticleData(articleId)}</example>
+  </function>
+
   <function>
     <description>获取文章列表</description>
     <name>getArticleList</name>
