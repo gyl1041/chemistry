@@ -391,7 +391,7 @@
                         <div class="logo">
                             <img src="${ctxImage}/static/images/timg.jfif" class="pull-left"/>
                             <div class="logo-text pull-left">
-                                <span class="logo-big-title it28 it-bold">厦门大学周锐课题组</span><br>
+                                <span class="logo-big-title it28 it-bold">厦门大学陈洪敏课题组</span><br>
                                 <span class="logo-small-title">金属有机化学、有机合成方法学</span>
                             </div>
                         </div>

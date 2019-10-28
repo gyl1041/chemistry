@@ -545,14 +545,14 @@
                     <div class="container-content-right-left">
                         <div class="container-content-left-info">
                             <span class="teacher-name-text space-right10 it28">
-                                周锐
+                                陈洪敏
                             </span>
                             <span class="teacher-detail-info-text">
                                 教授&nbsp;&nbsp;博士生导师
                             </span>
-                            <span>
-                                金属有机化学、有机合成方法学
-                            </span>
+                            <%--<span>--%>
+                                <%--金属有机化学、有机合成方法学--%>
+                            <%--</span>--%>
                         </div>
                     </div>
                     <div class="container-content-right-right">

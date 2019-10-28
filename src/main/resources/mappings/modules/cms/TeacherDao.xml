@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiamen.chemistry.modules.cms.dao.TeacherDao">
+    
+	<sql id="cmsArticleColumns">
+		a.id AS "id",
+		a.name AS "name",
+		a.image AS "image",
+		a.title AS "title",
+		a.introduce AS "introduce",
+		a.create_time AS "createTime",
+		a.updata_time AS "updataTime"
+	</sql>
+
+	<select id="selectTeacher" resultType="Teacher">
+		SELECT 
+			<include refid="cmsArticleColumns"/>
+		FROM cms_teacher a
+		WHERE a.id = #{id}
+	</select>
+
+
+	
+	<insert id="insert">
+		INSERT INTO cms_teacher(
+			id,
+			name,
+			image,
+			title,
+			introduce,
+			create_time,
+			updata_time
+		) VALUES (
+			#{id},
+			#{name},
+			#{image},
+			#{title},
+			#{introduce},
+			#{createTime},
+			#{updataTime}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE cms_teacher SET
+			name = #{name},
+			image = #{image},
+			title = #{title},
+			introduce = #{introduce},
+			updata_time = #{updataTime}
+		WHERE id = #{id}
+	</update>
+
+</mapper>
