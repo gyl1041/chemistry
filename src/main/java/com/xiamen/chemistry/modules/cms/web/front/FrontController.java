@@ -110,6 +110,13 @@ public class FrontController extends BaseController{
 		}
 		Site site = siteService.get(category.getSite().getId());
 		model.addAttribute("site", site);
+
+		List<Article> getArticleList = CmsUtils.getArticleList(Site.defaultSiteId(),category.getId(),1,1,"");
+		Article trueArticle = getArticleList.get(0);
+		trueArticle.setArticleData(articleDataService.get(trueArticle.getId()));
+		model.addAttribute("trueArticle", trueArticle);
+		CmsUtils.addViewConfigAttribute(model, category);
+
 		// 2：简介类栏目，栏目第一条内容
 		if("2".equals(category.getShowModes()) && "article".equals(category.getModule())){
 			// 如果没有子栏目，并父节点为跟节点的，栏目列表为当前栏目。
@@ -179,7 +186,7 @@ public class FrontController extends BaseController{
 				if (StringUtils.isNotBlank(category.getCustomListView())){
 					view = "/"+category.getCustomListView();
 				}
-	            CmsUtils.addViewConfigAttribute(model, category);
+
                 site =siteService.get(category.getSite().getId());
                 //System.out.println("else 栏目第一条内容 _2 :"+category.getSite().getTheme()+","+site.getTheme());
 				return "modules/cms/front/themes/"+siteService.get(category.getSite().getId()).getTheme()+view;
@@ -189,7 +196,8 @@ public class FrontController extends BaseController{
 			else{
 				model.addAttribute("category", category);
 				model.addAttribute("categoryList", categoryList);
-				String view = "/frontListCategory";
+//				String view = "/frontListCategory";
+				String view = "/frontList";
 				if (StringUtils.isNotBlank(category.getCustomListView())){
 					view = "/"+category.getCustomListView();
 				}

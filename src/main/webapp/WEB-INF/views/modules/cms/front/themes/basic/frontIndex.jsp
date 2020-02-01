@@ -670,20 +670,6 @@
     </div>
 
 </section>
-<%--<footer class="footer">--%>
-<%--    <div>--%>
-<%--        <div class="footer-bottom-new">--%>
-<%--            <span>Copyright ? 2014-2018 北京衮雪科技有限公司 All Rights Reserved&nbsp;&nbsp;&nbsp;&nbsp;</span>--%>
-<%--            <span>--%>
-<%--            <a href="#" target="_blank">京ICP备11026495-2号</a> &nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="#"--%>
-<%--                                                                                        style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">--%>
-<%--                    <img src="images/beian.png" style="float:left;">京公网安备 11010802027423号--%>
-<%--            </a>--%>
-<%--        </span>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
-<%--</footer>--%>
 
 </body>
 </html>
