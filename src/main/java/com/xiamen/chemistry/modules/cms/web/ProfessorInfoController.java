@@ -56,7 +56,7 @@ public class ProfessorInfoController {
     }
 
     @RequestMapping(value = "update")
-    public String updataInfo(Model model,MultipartFile photo, Professor professor, HttpServletRequest request, LinksRequestVO links) {
+    public String updataInfo(Model model, MultipartFile photo, Professor professor, HttpServletRequest request, LinksRequestVO links) {
 
         Teacher teacher = new Teacher();
         teacher.setName(professor.getName());
@@ -93,11 +93,16 @@ public class ProfessorInfoController {
         teacher.setIdNum(1);
         String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/userfiles/teacher/" + fileName;
         System.out.println(url);
-        teacher.setImage(url);
+        if (StringUtils.isNotBlank(fileName)) {
+            System.out.println("saveImage");
+            teacher.setImage(url);
+        }else {
+            System.out.println("not saveImage");
+        }
         teacher.setUpdateTime(new Date());
         teacherService.updata(teacher);
 
-        if(StringUtils.isNotBlank(links.getLinksName())){
+        if (StringUtils.isNotBlank(links.getLinksName())) {
             Links links1 = new Links();
             links1.setName(links.getLinksName());
             links1.setUrl(links.getLinksUrl());

@@ -48,7 +48,7 @@
                 name = #{name},
             </if>
 
-            <if test="image != null">
+            <if test='image != null and image !=""'>
                 image = #{image},
             </if>
 
