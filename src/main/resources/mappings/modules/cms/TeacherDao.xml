@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xiamen.chemistry.modules.cms.dao.TeacherDao">
-    
-	<sql id="cmsArticleColumns">
+
+    <sql id="cmsArticleColumns">
 		a.id AS "id",
 		a.name AS "name",
 		a.image AS "image",
 		a.title AS "title",
 		a.introduce AS "introduce",
 		a.create_time AS "createTime",
-		a.updata_time AS "updataTime"
+		a.update_time AS "updateTime"
 	</sql>
 
-	<select id="selectTeacher" resultType="Teacher">
-		SELECT 
-			<include refid="cmsArticleColumns"/>
-		FROM cms_teacher a
-		WHERE a.id = #{id}
-	</select>
+    <select id="selectTeacher" resultType="Teacher">
+        SELECT
+        <include refid="cmsArticleColumns"/>
+        FROM cms_teacher a
+        WHERE a.id = #{idNum}
+    </select>
 
 
-	
-	<insert id="insert">
+    <insert id="insert">
 		INSERT INTO cms_teacher(
 			id,
 			name,
@@ -29,26 +28,46 @@
 			title,
 			introduce,
 			create_time,
-			updata_time
+			update_time
 		) VALUES (
-			#{id},
+			#{idNum},
 			#{name},
 			#{image},
 			#{title},
 			#{introduce},
 			#{createTime},
-			#{updataTime}
+			#{updateTime}
 		)
 	</insert>
-	
-	<update id="update">
-		UPDATE cms_teacher SET
-			name = #{name},
-			image = #{image},
-			title = #{title},
-			introduce = #{introduce},
-			updata_time = #{updataTime}
-		WHERE id = #{id}
-	</update>
+
+    <update id="update">
+        UPDATE cms_teacher
+
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+
+            <if test="image != null">
+                image = #{image},
+            </if>
+
+            <if test="title != null">
+                title = #{title},
+            </if>
+
+            <if test="introduce != null">
+                introduce = #{introduce},
+            </if>
+            <if test="createTime != null">
+                create_time =#{createTime},
+            </if>
+
+            <if test="updateTime != null">
+                update_time =#{updateTime},
+            </if>
+        </set>
+        WHERE id = #{idNum}
+    </update>
 
 </mapper>

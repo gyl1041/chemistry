@@ -6,12 +6,21 @@ import java.util.Date;
 
 public class Teacher extends DataEntity<Teacher> {
     private static final long serialVersionUID = 1L;
+    private int idNum;
     private String name;  //姓名
     private String image;    //头像
     private String title;  //教授职称
     private String introduce;//教授介绍
     private Date createTime; //创建时间
-    private Date updataTime;  //更新时间
+    private Date updateTime;  //更新时间
+
+    public int getIdNum() {
+        return idNum;
+    }
+
+    public void setIdNum(int idNum) {
+        this.idNum = idNum;
+    }
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -57,11 +66,11 @@ public class Teacher extends DataEntity<Teacher> {
         this.createTime = createTime;
     }
 
-    public Date getUpdataTime() {
-        return updataTime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdataTime(Date updataTime) {
-        this.updataTime = updataTime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

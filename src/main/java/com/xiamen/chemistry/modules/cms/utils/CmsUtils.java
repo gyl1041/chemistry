@@ -16,10 +16,7 @@ import com.xiamen.chemistry.common.persistence.Page;
 import com.xiamen.chemistry.common.utils.CacheUtils;
 import com.xiamen.chemistry.common.utils.SpringContextHolder;
 import com.xiamen.chemistry.modules.cms.entity.*;
-import com.xiamen.chemistry.modules.cms.service.ArticleService;
-import com.xiamen.chemistry.modules.cms.service.CategoryService;
-import com.xiamen.chemistry.modules.cms.service.LinkService;
-import com.xiamen.chemistry.modules.cms.service.SiteService;
+import com.xiamen.chemistry.modules.cms.service.*;
 
 import javax.servlet.ServletContext;
 
@@ -31,15 +28,22 @@ import org.springframework.ui.Model;
  * @version 2013-5-29
  */
 public class CmsUtils {
-	
+	private static TeacherService teacherService = SpringContextHolder.getBean(TeacherService.class);
 	private static SiteService siteService = SpringContextHolder.getBean(SiteService.class);
 	private static CategoryService categoryService = SpringContextHolder.getBean(CategoryService.class);
 	private static ArticleService articleService = SpringContextHolder.getBean(ArticleService.class);
 	private static LinkService linkService = SpringContextHolder.getBean(LinkService.class);
+	private static LinksService linksService = SpringContextHolder.getBean(LinksService.class);
     private static ServletContext context = SpringContextHolder.getBean(ServletContext.class);
 
 	private static final String CMS_CACHE = "cmsCache";
-	
+
+
+	public static Teacher getTeacher(){
+		System.out.println("yonghuxinxi");
+		Teacher teacher = teacherService.get(1);
+		return teacher;
+	}
 	/**
 	 * 获得站点列表
 	 */
@@ -187,7 +191,17 @@ public class CmsUtils {
 	public static Link getLink(String linkId){
 		return linkService.get(linkId);
 	}
-	
+
+
+
+	/**
+	 * 获取链接
+	 * @param
+	 * @return
+	 */
+	public static List<Links> getLinks(){
+		return linksService.getLinks();
+	}
 	/**
 	 * 获取链接列表
 	 * @param siteId 站点编号

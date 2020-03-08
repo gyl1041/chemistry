@@ -18,6 +18,14 @@
     <function-signature>java.lang.String getCurrentSiteId()</function-signature>
     <example>${fnc:getCurrentSiteId()}</example>  
   </function>
+
+  <function>
+    <description>获取教师信息</description>
+    <name>teacher</name>
+    <function-class>com.xiamen.chemistry.modules.cms.utils.CmsUtils</function-class>
+    <function-signature>com.xiamen.chemistry.modules.cms.entity.Teacher getTeacher()</function-signature>
+    <example>${fnc:getTeacher()}</example>
+  </function>
   
   <function>
     <description>获取站点</description>
@@ -98,7 +106,15 @@
     <function-signature>com.xiamen.chemistry.modules.cms.entity.Link getLink(java.lang.String)</function-signature>
     <example>${fnc:getLink(linkId)}</example>  
   </function>
-  
+
+  <function>
+    <description>获取链接</description>
+    <name>getLinks</name>
+    <function-class>com.xiamen.chemistry.modules.cms.utils.CmsUtils</function-class>
+    <function-signature>java.util.List getLinks()</function-signature>
+    <example>${fnc:getLinks()}</example>
+  </function>
+
   <function>
     <description>获取链接列表</description>
     <name>getLinkList</name>

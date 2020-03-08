@@ -9,6 +9,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.xiamen.chemistry.modules.cms.entity.*;
+import com.xiamen.chemistry.modules.cms.service.*;
 import com.xiamen.chemistry.modules.cms.utils.CmsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,17 +27,6 @@ import com.xiamen.chemistry.common.persistence.Page;
 import com.xiamen.chemistry.common.servlet.ValidateCodeServlet;
 import com.xiamen.chemistry.common.utils.StringUtils;
 import com.xiamen.chemistry.common.web.BaseController;
-import com.xiamen.chemistry.modules.cms.entity.Article;
-import com.xiamen.chemistry.modules.cms.entity.Category;
-import com.xiamen.chemistry.modules.cms.entity.Comment;
-import com.xiamen.chemistry.modules.cms.entity.Link;
-import com.xiamen.chemistry.modules.cms.entity.Site;
-import com.xiamen.chemistry.modules.cms.service.ArticleDataService;
-import com.xiamen.chemistry.modules.cms.service.ArticleService;
-import com.xiamen.chemistry.modules.cms.service.CategoryService;
-import com.xiamen.chemistry.modules.cms.service.CommentService;
-import com.xiamen.chemistry.modules.cms.service.LinkService;
-import com.xiamen.chemistry.modules.cms.service.SiteService;
 
 /**
  * 网站Controller
@@ -58,7 +49,8 @@ public class FrontController extends BaseController{
 	private CategoryService categoryService;
 	@Autowired
 	private SiteService siteService;
-	
+	@Autowired
+	TeacherService teacherService;
 	/**
 	 * 网站首页
 	 */

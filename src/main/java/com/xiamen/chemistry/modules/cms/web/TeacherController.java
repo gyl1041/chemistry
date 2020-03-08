@@ -34,7 +34,7 @@ public class TeacherController {
         teacher.setTitle("adsda");
         teacher.setIntroduce("asdsad");
         teacher.setCreateTime(new Date());
-        teacher.setUpdataTime(new Date());
+        teacher.setUpdateTime(new Date());
         teacherService.insert(teacher);
         model.addAttribute("teacher",teacher);
         return "modules/cms/teacherInfo";

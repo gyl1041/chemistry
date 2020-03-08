@@ -532,36 +532,37 @@
                 <div class="container-content-left">
                     <div class="container-content-left-pic">
                         <c:forEach items="${fnc:getArticleList(site.id, '25eaba041f114a7db9525eab7d8e8ba5',1, 1, '')}"
-                                       var="article">
+                                   var="article">
                             <%--<li><a href="${article.url}" style="color:${article.color}"><img--%>
-                                    <%--src="${article.image}"><br><span class="text-edd-2">${fns:abbr(article.title,28)}</span></a>--%>
+                            <%--src="${article.image}"><br><span class="text-edd-2">${fns:abbr(article.title,28)}</span></a>--%>
                             <%--</li>--%>
-                            <img src="${article.image}">
+                            <img src="${fnc:teacher().image}">
                         </c:forEach>
-
                     </div>
                 </div>
                 <div class="container-content-right">
                     <div class="container-content-right-left">
                         <div class="container-content-left-info">
                             <span class="teacher-name-text space-right10 it28">
-                                陈洪敏
+                                ${fnc:teacher().name}
                             </span>
                             <span class="teacher-detail-info-text">
-                                教授&nbsp;&nbsp;博士生导师
+                                ${fnc:teacher().title}
                             </span>
                             <%--<span>--%>
-                                <%--金属有机化学、有机合成方法学--%>
+                            <%--金属有机化学、有机合成方法学--%>
                             <%--</span>--%>
                         </div>
                     </div>
                     <div class="container-content-right-right">
                         <div class="container-content-right-text">
-                            <c:set var="article22" value="${fnc:getArticleData('e500b3a636a246dd82f498712866cd99')}"/>
+                            <%--<c:set var="article22" value="${fnc:getArticleData('e500b3a636a246dd82f498712866cd99')}"/>--%>
+<%--                            <c:set var="article22" value="${fnc:teacher().name}"/>--%>
+                                ${fnc:teacher().introduce}
                             <%--西虹市科技大学化学系教授，博士生导师，有机化学研究所研究员和副所长，结合应用基础研究，--%>
                             <%--瞄准国际前沿方向和国家能源战略需求的核心科学问题开展工作，同时致力于解决人类发展的重大问题--%>
                             <%--，如环境、能源和人类健康等。--%>
-                            ${fns:abbr(fns:replaceHtml(article22.content),230)}
+<%--                            ${fns:abbr(fns:replaceHtml(article22.content),230)}--%>
                         </div>
                     </div>
                 </div>
@@ -655,12 +656,15 @@
             <div class="container-content" style="margin-bottom:20px;">
                 <div class="link-list-ar">
                     <ul>
-                        <li><a href="#"> 教育部科技发展中心</a></li>
-                        <li><a href="#"> 中国科学院</a></li>
-                        <li><a href="#"> 中国工程院</a></li>
-                        <li><a href="#"> 国家自然科学基金委</a></li>
-                        <li><a href="#"> 中国知网cnki</a></li>
-                        <li><a href="#"> 新东方教育</a></li>
+                        <c:forEach items="${fnc:getLinks()}" var="link">
+                            <li><a href="${link.url}"> ${link.name}</a></li>
+                        </c:forEach>
+                        <%--                        <li><a href="#"> 教育部科技发展中心</a></li>--%>
+                        <%--                        <li><a href="#"> 中国科学院</a></li>--%>
+                        <%--                        <li><a href="#"> 中国工程院</a></li>--%>
+                        <%--                        <li><a href="#"> 国家自然科学基金委</a></li>--%>
+                        <%--                        <li><a href="#"> 中国知网cnki</a></li>--%>
+                        <%--                        <li><a href="#"> 新东方教育</a></li>--%>
                         <div class="clear-float"></div>
                     </ul>
 
