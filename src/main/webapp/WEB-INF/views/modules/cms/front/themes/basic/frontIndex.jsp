@@ -657,7 +657,7 @@
                 <div class="link-list-ar">
                     <ul>
                         <c:forEach items="${fnc:getLinks()}" var="link">
-                            <li><a href="${link.url}"> ${link.name}</a></li>
+                            <li><a href="${link.url}" target="_blank"> ${link.name}</a></li>
                         </c:forEach>
                         <%--                        <li><a href="#"> 教育部科技发展中心</a></li>--%>
                         <%--                        <li><a href="#"> 中国科学院</a></li>--%>
